@@ -28,7 +28,7 @@ public class Solution {
           && inputIntegers[i] >= inputIntegers[indexes_leftHalf.peek()]) {
         indexes_leftHalf.pop();
       }
-      // The condition: (j<i && inputIntegers[j]<inputIntegers[i]) is fulfilled.
+      // The condition: (left_i<i && inputIntegers[left_i]>inputIntegers[i]) is fulfilled.
       if (!indexes_leftHalf.isEmpty()) {
         productOfIndexes[i] = indexes_leftHalf.peek() + 1;
       }
@@ -45,7 +45,7 @@ public class Solution {
           indexes_rightHalf.pop();
         }
 
-        // The condition: (i<j && inputIntegers[i]<inputIntegers[j]) is fulfilled.
+        // The condition: (i<right_i && inputIntegers[i]<inputIntegers[right_i]) is fulfilled.
         if (!indexes_rightHalf.isEmpty()) {
           // Of course, the statement below could also be written: productOfIndexes[i] *= (1 + indexes_rightHalf.peek());
           // But if the line does not stretch too far, the code would be more observable without the shortcut of '*='.
