@@ -1,5 +1,3 @@
-package JavaJava.maximumIndexProduct.gitHub;
-
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -49,6 +47,8 @@ public class Solution {
 
         // The condition: (i<j && inputIntegers[i]<inputIntegers[j]) is fulfilled.
         if (!indexes_rightHalf.isEmpty()) {
+          // Of course, the statement below could also be written: productOfIndexes[i] *= (1 + indexes_rightHalf.peek());
+          // But if the line does not stretch too far, the code would be more observable without the shortcut of '*='.
           productOfIndexes[i] = productOfIndexes[i] * (1 + indexes_rightHalf.peek());
 
         }
